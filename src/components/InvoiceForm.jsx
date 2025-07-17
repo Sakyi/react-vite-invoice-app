@@ -93,7 +93,7 @@ export default function InvoiceForm({
           onChange={(e) => setOverPaid(parseInt(e.target.value))}
         />
       </div>
-      <div className="mt-4 font-bold">Total: ${total[0]}</div>
+      <div className="mt-4 font-bold">Total: GH₵ {total[0]}</div>
 
       <button
         className="mt-4 bg-blue-500 text-white p-2"

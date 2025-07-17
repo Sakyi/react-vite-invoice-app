@@ -156,6 +156,22 @@ const PrintableInvoiceExporter = ({
                       </td>
                     </tr>
                     {/* Discount */}
+                    <tr className="-pt-1">
+                      <td className="border border-black p-2 font-bold">
+                        Discount
+                      </td>
+
+                      <td className="border border-black p-2 text-right font-bold">
+                        {new Intl.NumberFormat("en-IN", {
+                          maximumSignificantDigits: 3,
+                        }).format(
+                          parseInt(
+                            invoice.discount === "" ? "0" : invoice.discount
+                          )
+                        )}
+                        %
+                      </td>
+                    </tr>
                     {/* Total */}
                     <tr>
                       <td className="border border-black p-2  font-bold">

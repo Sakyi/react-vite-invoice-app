@@ -647,7 +647,7 @@ export const OptionalInvoiceItems = [
     id: "pta_dues",
     name: "PTA Dues",
     qty: 1,
-    amount: 300,
+    amount: 100,
   },
   {
     id: "stationary_essentials",
