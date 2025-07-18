@@ -38,7 +38,7 @@ const PrintableInvoiceExporter = ({
               <div>
                 <div className="flex gap-1">
                   <img
-                    src="./shoollogo.jpg"
+                    src="./schoollogo.jpg"
                     alt="Shool Logoooooosso"
                     className="h-[60px] mb-2"
                   />
@@ -207,7 +207,7 @@ const PrintableInvoiceExporter = ({
               </div>
               <div className=" p-1 rounded w-1/2">
                 <img
-                  src="./logo/momo.png"
+                  src="momologo.jpg"
                   alt="momo logo"
                   className="h-[40px] mb-1"
                 />
