@@ -1,4 +1,6 @@
 import React, { useRef } from "react";
+import Logo from "../assets/schoollogo.jpg";
+import MomoLogo from "../assets/momologo.jpg";
 
 const PrintableInvoiceExporter = ({
   invoices,
@@ -37,11 +39,7 @@ const PrintableInvoiceExporter = ({
             <div className="flex justify-between items-center border-b pb-3 mb-4">
               <div>
                 <div className="flex gap-1">
-                  <img
-                    src="schoollogo.jpg"
-                    alt="School Logo"
-                    className="h-[60px] mb-2"
-                  />
+                  <img src={Logo} alt="SchoolLogo" className="h-[60px] mb-2" />
                   <h2 className="font-bold text-black text-[15px] leading-5">
                     EDLYS
                     <br />
@@ -206,11 +204,7 @@ const PrintableInvoiceExporter = ({
                 </p>
               </div>
               <div className=" p-1 rounded w-1/2">
-                <img
-                  src="momologo.jpg"
-                  alt="momo logo"
-                  className="h-[40px] mb-1"
-                />
+                <img src={MomoLogo} alt="momo logo" className="h-[40px] mb-1" />
                 <h3 className="font-semibold  mb-1"></h3>
                 <p className="text-xs  mb-2">
                   <span className="font-bold">Momo Name: </span>Edlys Montessori
