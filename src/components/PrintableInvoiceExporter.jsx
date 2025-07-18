@@ -38,8 +38,8 @@ const PrintableInvoiceExporter = ({
               <div>
                 <div className="flex gap-1">
                   <img
-                    src="./logo/schoolLogo.png"
-                    alt="School Logo"
+                    src="./schoollogo.jpg"
+                    alt="School Logoooooosso"
                     className="h-[60px] mb-2"
                   />
                   <h2 className="font-bold text-black text-[15px] leading-5">

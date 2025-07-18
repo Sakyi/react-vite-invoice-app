@@ -30,6 +30,11 @@ function App() {
           )}
         </div>
         <div className="-mt-5 pt-2 h-[400px]">
+          <img
+            src="/schoollogo.jpg"
+            alt="School Logoooddddooosso"
+            className="h-[60px] mb-2"
+          />
           {selectedStudent && (
             <InvoiceForm
               student={selectedStudent}

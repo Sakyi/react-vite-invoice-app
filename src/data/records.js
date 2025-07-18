@@ -651,7 +651,7 @@ export const OptionalInvoiceItems = [
   },
   {
     id: "stationary_essentials",
-    name: "Stationary Essentials",
+    name: "Stationery and Essentials",
     qty: 1,
     amount: 400,
   },
