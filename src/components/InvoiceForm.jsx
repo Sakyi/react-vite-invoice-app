@@ -34,83 +34,118 @@ export default function InvoiceForm({
   const updatedThings = total[1];
 
   return (
-    <div className="border p-4 my-4">
-      <h3 className="font-bold pb-4">{student.name}'s Invoice</h3>
+    <div className="rounded-xl shadow-sm px-6 pt-4 bg-white max-w-2xl mx-auto">
+      <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">
+        {student.name}'s Invoice
+      </h2>
 
-      <div className="grid grid-cols-2 gap-2">
-        {OptionalInvoiceItems.map((item) => (
-          <label key={item.id} className="flex items-center">
-            <input type="checkbox" onChange={() => toggleItem(item)} />
-            <span className="ml-2">
-              {item.name} - GH₵ {item.amount}
-            </span>
-          </label>
-        ))}
+      {/* Optional Items */}
+      <div className="mb-6">
+        <h3 className="font-medium text-gray-700 mb-0">Optional Items</h3>
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-3">
+          {OptionalInvoiceItems.map((item) => (
+            <label
+              key={item.id}
+              className="flex items-center bg-gray-50 rounded px-3 py-2 border"
+            >
+              <input
+                type="checkbox"
+                onChange={() => toggleItem(item)}
+                className="mr-2"
+              />
+              <span className="text-sm text-gray-700">
+                {item.name} – GH₵ {item.amount}
+              </span>
+            </label>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-4">
-        <label>Feeding Type:</label>
-        <select
-          onChange={(e) => setFeeding({ ...feeding, type: e.target.value })}
-        >
-          <option value="">None</option>
-          <option value="breakfast">Breakfast</option>
-          <option value="lunch">Lunch</option>
-          <option value="both">Both</option>
-        </select>
-
-        <label className="ml-4">Days:</label>
-        <input
-          type="number"
-          className="border ml-2 w-20"
-          onChange={(e) =>
-            setFeeding({ ...feeding, days: parseInt(e.target.value) })
+      {/* Feeding Selection */}
+      <div className="mb-2">
+        <h3 className="font-medium text-gray-700 mb-2 -mt-3">Feeding Plan</h3>
+        <div className="flex flex-wrap items-center gap-4">
+          <div>
+            <label className="block text-sm mb-1">Feeding Type</label>
+            <select
+              value={feeding.type}
+              onChange={(e) => setFeeding({ ...feeding, type: e.target.value })}
+              className="border rounded px-3 py-2 w-40"
+            >
+              <option value="">None</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm mb-1">Number of Days</label>
+            <input
+              type="number"
+              value={feeding.days}
+              onChange={(e) =>
+                setFeeding({ ...feeding, days: parseInt(e.target.value) || 0 })
+              }
+              className="border rounded px-3 py-2 w-24"
+              min={0}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label className="block text-sm mb-1">Discount</label>
+          <select
+            value={discount}
+            onChange={(e) => setDiscount(e.target.value)}
+            className="border rounded px-3 py-2 w-full"
+          >
+            <option value="">None</option>
+            <option value="10%">10%</option>
+            <option value="50%">50%</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm mb-1">Arrears</label>
+          <input
+            type="number"
+            value={arrears}
+            onChange={(e) => setArrears(parseFloat(e.target.value) || 0)}
+            className="border rounded px-3 py-2 w-full"
+          />
+        </div>
+        <div>
+          <label className="block text-sm mb-1">Overpaid</label>
+          <input
+            type="number"
+            value={overPaid}
+            onChange={(e) => setOverPaid(parseFloat(e.target.value) || 0)}
+            className="border rounded px-3 py-2 w-full"
+          />
+        </div>
+      </div>
+      {/* Total and Submit */}
+      <div className="flex items-center justify-between mt-6">
+        <div className="text-lg font-semibold text-blue-700">
+          Total: GH₵ {total[0].toFixed(2)}
+        </div>
+        <button
+          onClick={() =>
+            onGenerate({
+              student,
+              updatedThings,
+              feeding,
+              discount,
+              total,
+              arrears,
+              overPaid,
+            })
           }
-        />
+          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded transition duration-200"
+        >
+          Add to Print Queue
+        </button>
       </div>
-
-      <div className="mt-4">
-        <label>Discount:</label>
-        <select onChange={(e) => setDiscount(e.target.value)} className="ml-2">
-          <option value="">None</option>
-          <option value="10%">10%</option>
-          <option value="50%">50%</option>
-        </select>
-      </div>
-      <div className="mt-4">
-        <label>Arrears:</label>
-        <input
-          type="number"
-          className="border ml-2 w-20"
-          onChange={(e) => setArrears(parseInt(e.target.value))}
-        />
-      </div>
-      <div className="mt-4">
-        <label className="">OverPaid:</label>
-        <input
-          type="number"
-          className="border ml-2 w-20"
-          onChange={(e) => setOverPaid(parseInt(e.target.value))}
-        />
-      </div>
-      <div className="mt-4 font-bold">Total: GH₵ {total[0]}</div>
-
-      <button
-        className="mt-4 bg-blue-500 text-white p-2"
-        onClick={() =>
-          onGenerate({
-            student,
-            updatedThings,
-            feeding,
-            discount,
-            total,
-            arrears,
-            overPaid,
-          })
-        }
-      >
-        Add to Print Queue
-      </button>
     </div>
   );
 }

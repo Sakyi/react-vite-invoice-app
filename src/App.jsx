@@ -18,31 +18,48 @@ function App() {
   };
 
   return (
-    <div className="p-6">
-      <ClassSelector classes={classes} onSelect={setSelectedClass} />
-      <div className="flex justify-between items-start mt-5">
-        <div className="h-[500px] overflow-auto border border-gray-200 mt-0">
-          {selectedClass && (
-            <StudentList
-              students={students[selectedClass]}
-              onSelectStudent={setSelectedStudent}
-            />
-          )}
-        </div>
-        <div className="-mt-5 pt-2 h-[400px]">
-          {selectedStudent && (
-            <InvoiceForm
-              student={selectedStudent}
-              onGenerate={handleGenerate}
-              selectedClass={selectedClass}
-              setDiscount={setDiscount}
-              discount={discount}
-              setTotalFee={setTotalFee}
-            />
-          )}
+    <div className="min-h-screen">
+      <div className="h-[80%] bg-gray-100 text-gray-800 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-full">
+          <aside className="md:col-span-3 w-auto bg-white shadow-md rounded-xl p-4 h-fit sticky top-4 self-start">
+            <div className="mb-4">
+              <ClassSelector classes={classes} onSelect={setSelectedClass} />
+            </div>
+            {selectedClass && (
+              <StudentList
+                students={students[selectedClass]}
+                onSelectStudent={setSelectedStudent}
+              />
+            )}
+          </aside>
+          {/* Main Panel */}
+          <main className="md:col-span-5 bg-white rounded-xl shadow-md p-0 min-h-[200px]">
+            {selectedStudent ? (
+              <div>
+                <InvoiceForm
+                  student={selectedStudent}
+                  onGenerate={handleGenerate}
+                  selectedClass={selectedClass}
+                  setDiscount={setDiscount}
+                  discount={discount}
+                  setTotalFee={setTotalFee}
+                />
+              </div>
+            ) : (
+              <div
+                key="placeholder"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="flex items-center justify-center h-full text-gray-500"
+              >
+                <p>Select a student to start invoice setup.</p>
+              </div>
+            )}
+          </main>
         </div>
       </div>
-      <div>
+      <div className="h-[10%]">
         {invoices.length > 0 && (
           <PrintableInvoiceExporter
             invoices={invoices}
