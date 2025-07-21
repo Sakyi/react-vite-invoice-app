@@ -69,7 +69,7 @@ const PrintableInvoiceExporter = ({
                 <p>{selectedClass}</p>
               </div>
               <div>
-                <p>Invoice #: {invoice.invoiceNumber || `INV-${i + 1}`}</p>
+                <p>Invoice #: {invoice.invoiceNumber || `EDMS-INV-${i + 1}`}</p>
                 <p>
                   <strong>Date:</strong> {new Date().toLocaleDateString()}
                 </p>
@@ -99,9 +99,21 @@ const PrintableInvoiceExporter = ({
                   <tr key={idx}>
                     <td className=" p-2">{item.name}</td>
                     <td className=" p-2 text-right">{item.qty}</td>
-                    <td className=" p-2 text-right">₵{Number(item.amount)}</td>
                     <td className=" p-2 text-right">
-                      ₵{item.qty * item.amount}
+                      {new Intl.NumberFormat("en-GH", {
+                        style: "currency",
+                        currency: "GHS",
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      }).format(item.amount)}
+                    </td>
+                    <td className=" p-2 text-right">
+                      {new Intl.NumberFormat("en-GH", {
+                        style: "currency",
+                        currency: "GHS",
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      }).format(item.qty * item.amount)}
                     </td>
                   </tr>
                 ))}
@@ -131,8 +143,12 @@ const PrintableInvoiceExporter = ({
                         SubTotal
                       </td>
                       <td className="border border-black p-2 text-right font-bold">
-                        GH₵{" "}
-                        {new Intl.NumberFormat("en-IN", {}).format(
+                        {new Intl.NumberFormat("en-GH", {
+                          style: "currency",
+                          currency: "GHS",
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        }).format(
                           invoice.updatedThings.reduce(
                             (sum, item) => sum + parseFloat(item.amount),
                             0
@@ -147,10 +163,12 @@ const PrintableInvoiceExporter = ({
                       </td>
 
                       <td className="border border-black p-2 text-right font-bold">
-                        GH₵{" "}
-                        {new Intl.NumberFormat("en-IN", {}).format(
-                          invoice.arrears
-                        )}
+                        {new Intl.NumberFormat("en-GH", {
+                          style: "currency",
+                          currency: "GHS",
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        }).format(invoice.arrears)}
                       </td>
                     </tr>
                     {/* Discount */}
@@ -160,7 +178,7 @@ const PrintableInvoiceExporter = ({
                       </td>
 
                       <td className="border border-black p-2 text-right font-bold">
-                        {new Intl.NumberFormat("en-IN", {}).format(
+                        {new Intl.NumberFormat("en-GH", {}).format(
                           parseInt(
                             invoice.discount === "" ? "0" : invoice.discount
                           )
@@ -174,10 +192,12 @@ const PrintableInvoiceExporter = ({
                         Total
                       </td>
                       <td className="border border-black p-2 text-right font-bold">
-                        GH₵{" "}
-                        {new Intl.NumberFormat("en-IN", {}).format(
-                          invoice.total[0]
-                        )}
+                        {new Intl.NumberFormat("en-GH", {
+                          style: "currency",
+                          currency: "GHS",
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        }).format(invoice.total[0])}
                       </td>
                     </tr>
                   </tbody>
