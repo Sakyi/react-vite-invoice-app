@@ -99,11 +99,9 @@ const PrintableInvoiceExporter = ({
                   <tr key={idx}>
                     <td className=" p-2">{item.name}</td>
                     <td className=" p-2 text-right">{item.qty}</td>
+                    <td className=" p-2 text-right">₵{Number(item.amount)}</td>
                     <td className=" p-2 text-right">
-                      ₵{Number(item.amount).toFixed(2)}
-                    </td>
-                    <td className=" p-2 text-right">
-                      ₵{(item.qty * item.amount).toFixed(2)}
+                      ₵{item.qty * item.amount}
                     </td>
                   </tr>
                 ))}
@@ -134,9 +132,7 @@ const PrintableInvoiceExporter = ({
                       </td>
                       <td className="border border-black p-2 text-right font-bold">
                         GH₵{" "}
-                        {new Intl.NumberFormat("en-IN", {
-                          maximumSignificantDigits: 3,
-                        }).format(
+                        {new Intl.NumberFormat("en-IN", {}).format(
                           invoice.updatedThings.reduce(
                             (sum, item) => sum + parseFloat(item.amount),
                             0
@@ -152,9 +148,9 @@ const PrintableInvoiceExporter = ({
 
                       <td className="border border-black p-2 text-right font-bold">
                         GH₵{" "}
-                        {new Intl.NumberFormat("en-IN", {
-                          maximumSignificantDigits: 3,
-                        }).format(invoice.arrears.toFixed(2))}
+                        {new Intl.NumberFormat("en-IN", {}).format(
+                          invoice.arrears
+                        )}
                       </td>
                     </tr>
                     {/* Discount */}
@@ -164,9 +160,7 @@ const PrintableInvoiceExporter = ({
                       </td>
 
                       <td className="border border-black p-2 text-right font-bold">
-                        {new Intl.NumberFormat("en-IN", {
-                          maximumSignificantDigits: 3,
-                        }).format(
+                        {new Intl.NumberFormat("en-IN", {}).format(
                           parseInt(
                             invoice.discount === "" ? "0" : invoice.discount
                           )
@@ -181,9 +175,9 @@ const PrintableInvoiceExporter = ({
                       </td>
                       <td className="border border-black p-2 text-right font-bold">
                         GH₵{" "}
-                        {new Intl.NumberFormat("en-IN", {
-                          maximumSignificantDigits: 3,
-                        }).format(invoice.total[0].toFixed(2))}
+                        {new Intl.NumberFormat("en-IN", {}).format(
+                          invoice.total[0]
+                        )}
                       </td>
                     </tr>
                   </tbody>
