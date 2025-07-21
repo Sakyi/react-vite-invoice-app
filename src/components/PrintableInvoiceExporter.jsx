@@ -134,9 +134,13 @@ const PrintableInvoiceExporter = ({
                       </td>
                       <td className="border border-black p-2 text-right font-bold">
                         GH₵{" "}
-                        {invoice.updatedThings.reduce(
-                          (sum, item) => sum + parseFloat(item.amount),
-                          0
+                        {new Intl.NumberFormat("en-IN", {
+                          maximumSignificantDigits: 3,
+                        }).format(
+                          invoice.updatedThings.reduce(
+                            (sum, item) => sum + parseFloat(item.amount),
+                            0
+                          )
                         )}
                       </td>
                     </tr>
@@ -176,7 +180,10 @@ const PrintableInvoiceExporter = ({
                         Total
                       </td>
                       <td className="border border-black p-2 text-right font-bold">
-                        GH₵ {Number(invoice.total[0].toFixed(2))}
+                        GH₵{" "}
+                        {new Intl.NumberFormat("en-IN", {
+                          maximumSignificantDigits: 3,
+                        }).format(invoice.total[0].toFixed(2))}
                       </td>
                     </tr>
                   </tbody>
