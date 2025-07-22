@@ -1,6 +1,7 @@
 export const classes = [
   "Creche-Little Delight",
   "Creche-Cherry",
+  "Nursery 1",
   "Nursery 1-Paradise Petals",
   "Nursery 1-Pumpkins",
   "Nursery 1-Bright Rose",
@@ -17,6 +18,7 @@ export const classes = [
   "KG2-Marigold",
   "KG2-Star Seeds",
   "KG2-Daffodils",
+  "Grade 1",
   "Grade 1-Smart Start A",
   "Grade 1-Smart Start B",
   "Grade 1-Smart Start C",
@@ -427,8 +429,6 @@ export const students = {
     { id: "stu-379", name: "Sesime Michael- Andrew Kwame Addam" },
     { id: "stu-380", name: "Sikakokoo O. A. Oduro- Kwarten" },
     { id: "stu-381", name: "Yossi-Manuel O. Boahene" },
-  ],
-  "Grade 1": [
     { id: "stu-382", name: "Aiden Nhyira Danso Buabeng" },
     { id: "stu-383", name: "Andre Eli Owusu- Gyamfi" },
     { id: "stu-384", name: "Axel Samuel Tettey Odonkor" },
@@ -452,8 +452,6 @@ export const students = {
     { id: "stu-402", name: "Skeuos Divine Anakpo" },
     { id: "stu-403", name: "Violet- Wesley Yeboah" },
     { id: "stu-404", name: "Zayed Prah Tawfik" },
-  ],
-  "Grade 1": [
     { id: "stu-405", name: "Alina Ewurakua Kwofie" },
     { id: "stu-406", name: "Aria Dzidzeme Nyamador" },
     { id: "stu-407", name: "Carl Jr. Kwabena Asafo-Agyei" },
