@@ -127,7 +127,13 @@ export default function InvoiceForm({
       {/* Total and Submit */}
       <div className="flex items-center justify-between mt-6">
         <div className="text-lg font-semibold text-blue-700">
-          Total: GH₵ {total[0].toFixed(2)}
+          Total: GH₵{" "}
+          {new Intl.NumberFormat("en-GH", {
+            style: "currency",
+            currency: "GHS",
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          }).format(total[0])}
         </div>
         <button
           onClick={() =>
