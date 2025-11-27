@@ -1,12 +1,29 @@
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 export default function ClassSelector({ classes, onSelect }) {
   return (
-    <select onChange={(e) => onSelect(e.target.value)} className="border p-2">
-      <option value="">Select a Class</option>
-      {classes.map((cls) => (
-        <option key={cls} value={cls}>
-          {cls}
-        </option>
-      ))}
-    </select>
+    <Select onValueChange={(value) => onSelect(value)}>
+      <SelectTrigger className="w-[180px]">
+        <SelectValue placeholder="Select a classroom" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>classrooms</SelectLabel>
+          {classes.map((cls) => (
+            <SelectItem key={cls} value={cls}>
+              {cls}
+            </SelectItem>
+          ))}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 }
