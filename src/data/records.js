@@ -562,7 +562,7 @@ export const students = {
     { id: "stu-437", name: "Sikakokoo O. A. Oduro- Kwarten" },
     { id: "stu-438", name: "TEMILOLA SIKA TEYIBO" },
   ],
-  "GRADE 1-Smart Start C": [
+  "Grade 1-Smart Start C": [
     { id: "stu-439", name: "Archie Selarli Tay" },
     { id: "stu-440", name: "Axel Samuel Tettey Odonkor" },
     { id: "stu-441", name: "Carl Jr. Kwabena ASAFO-AGYEI" },
