@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Logo from "../assets/schoollogo.jpg";
 import MomoLogo from "../assets/momologo.jpg";
+import { DateFormatter } from "@/utils/DateFormatter";
 
 const PrintableInvoiceExporter = ({ invoices, selectedClass }) => {
   const printRef = useRef();
@@ -8,7 +9,7 @@ const PrintableInvoiceExporter = ({ invoices, selectedClass }) => {
   const handlePrint = () => {
     window.print();
   };
-
+  const todaysDate = new Date().toLocaleDateString();
   const filteredInvoices = invoices.filter((p) => p.student.name.trim() !== "");
 
   return (
@@ -70,7 +71,10 @@ const PrintableInvoiceExporter = ({ invoices, selectedClass }) => {
                       Invoice #: {invoice.invoiceNumber || `EDMS-INV-${i + 1}`}
                     </p>
                     <p>
-                      <strong>Date:</strong> {new Date().toLocaleDateString()}
+                      <strong>Invoice Date:</strong> {DateFormatter(todaysDate)}
+                    </p>
+                    <p>
+                      <strong>Due Date:</strong> {DateFormatter("1/08/2026")}
                     </p>
                   </div>
                 </div>
