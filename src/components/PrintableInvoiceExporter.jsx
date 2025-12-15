@@ -148,11 +148,20 @@ const PrintableInvoiceExporter = ({ invoices, selectedClass }) => {
                             }).format(invoice.arrears)}
                           </td>
                         </tr>
+                        <tr>
+                          <td className="border p-2 font-bold">Overpaid</td>
+                          <td className="border p-2 text-right font-bold">
+                            {new Intl.NumberFormat("en-GH", {
+                              style: "currency",
+                              currency: "GHS",
+                            }).format(invoice.overPaid)}
+                          </td>
+                        </tr>
 
                         <tr>
                           <td className="border p-2 font-bold">Discount</td>
                           <td className="border p-2 text-right font-bold">
-                            {invoice.discount ? `${invoice.discount}%` : "0%"}
+                            {invoice.discount ? `${invoice.discount}` : "0%"}
                           </td>
                         </tr>
 

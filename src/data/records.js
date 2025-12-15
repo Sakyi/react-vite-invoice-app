@@ -17,6 +17,7 @@ export const classes = [
   "KG2-Marigold",
   "KG2-Star Seeds",
   "KG2-Daffodils",
+  "KG2-Roses",
   "Grade 1-Smart Start A",
   "Grade 1-Smart Start B",
   "Grade 1-Smart Start C",
@@ -497,7 +498,7 @@ export const students = {
     { id: "stu-321", name: "Percy Hayford Brako" },
     { id: "stu-322", name: "Philippa Kyere Hinneh" },
   ],
-  "KG2 NEW": [
+  "KG2-Roses": [
     { id: "stu-380", name: "Aadil Faisal Mohammed" },
     { id: "stu-381", name: "Ahmed Ben-Bella" },
     { id: "stu-382", name: "AIDEN NHYIRA BOAHENE" },
