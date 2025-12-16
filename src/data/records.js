@@ -226,6 +226,7 @@ export const students = {
     { id: "stu-126", name: "Shayan Ceazar" },
     { id: "stu-127", name: "TERRI-NATHANIEL AGYEMANG AMOATENG" },
     { id: "stu-128", name: "ZACHORY ELY MASUKU" },
+    {id: "stu-612",  name: "Ciana Akua Adom Frimpong-Manso"}
   ],
   "Nursery 2-Daisies": [
     { id: "stu-186", name: "ABDUL JAMEEL WUNPINI ALHASSAN" },
