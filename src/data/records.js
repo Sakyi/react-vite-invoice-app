@@ -49,6 +49,7 @@ export const students = {
     { id: "stu-015", name: "PRINCESS-ALMA NANA ADWOA NUAMA THOMPSON" },
     { id: "stu-016", name: "SONIA SEDINAM MENSAH" },
     { id: "stu-017", name: "STACY WOLINAM AMEDZEKOR" },
+    { id: "stu-613", name: "⁠Roselove Atitsogbui" },
   ],
 
   "Creche-Little Delight": [
@@ -121,6 +122,7 @@ export const students = {
     { id: "stu-102", name: "NATANYA OWUSUA ATTA OPOKU" },
     { id: "stu-103", name: "ROCHELLE-AVA ADDAI BAFFOUR" },
     { id: "stu-104", name: "TESSA MYLES NARH" },
+    { id: "stu-615", name: "⁠Olaniyan Olubukola Teyibo" },
   ],
   "Nursery 1-Bright Rose": [
     { id: "stu-096", name: "Abby Jayne Adwoa Brayie Bediako-Poku" },
@@ -173,6 +175,8 @@ export const students = {
     { id: "stu-085", name: "SELIKEM GATTOGO" },
     { id: "stu-086", name: "WYATT NANA KWAME OSEI" },
     { id: "stu-087", name: "ZAYNE AXEL MAWUHORNAM KORKU QUIST" },
+    { id: "stu-616", name: " ⁠Aadalis Nyamador" },
+    { id: "stu-617", name: " ⁠Joseph Varrick-Armah" },
   ],
   "Nursery 1-Giggles": [
     { id: "stu-120", name: "Aaron Agyeman Prempeh Opoku" },
@@ -226,7 +230,8 @@ export const students = {
     { id: "stu-126", name: "Shayan Ceazar" },
     { id: "stu-127", name: "TERRI-NATHANIEL AGYEMANG AMOATENG" },
     { id: "stu-128", name: "ZACHORY ELY MASUKU" },
-    {id: "stu-612",  name: "Ciana Akua Adom Frimpong-Manso"}
+    { id: "stu-612", name: "Ciana Akua Adom Frimpong-Manso" },
+    { id: "stu-619", name: "⁠Joanne Kyeremanteng" },
   ],
   "Nursery 2-Daisies": [
     { id: "stu-186", name: "ABDUL JAMEEL WUNPINI ALHASSAN" },
@@ -326,6 +331,8 @@ export const students = {
     { id: "stu-156", name: "SEAN ELLIOT ADJEI-AGYEMAN" },
     { id: "stu-157", name: "YAW OWUSU-GYAMFI II" },
     { id: "stu-158", name: "ZAYNE KWAME YEBOAH FREMPONG" },
+    { id: "stu-618", name: "⁠Evana Nana Oye Opoku" },
+    { id: "stu-619", name: "⁠Brian Kwesi Asante-Enuson" },
   ],
   "KG1-Treasures": [
     { id: "stu-262", name: "Abdul- Hakeem Suhiyini Ibrahim" },
