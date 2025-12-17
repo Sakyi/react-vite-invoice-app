@@ -357,6 +357,7 @@ export const students = {
     { id: "stu-281", name: "NYAMEDEA ASAMOAH OKYERE" },
     { id: "stu-282", name: "PRECIOUS YENITATE GAMBIRE" },
     { id: "stu-283", name: "Sekani Esene Tay" },
+    { id: "stu-707", name: "⁠Fafa Ansell Bediako" },
   ],
   "KG1-Lillies": [
     { id: "stu-222", name: "ALEXANDRA OSEI ASIBEY" },
@@ -423,6 +424,7 @@ export const students = {
     { id: "stu-303", name: "OYE DWOMMOH NYARKO" },
     { id: "stu-304", name: "Papa Kwadwo Agyei Calvin ASAFO-AGYEI" },
     { id: "stu-305", name: "Perrine Elise Biafra Ankobil" },
+    { id: "stu-706", name: " ⁠Adilene Aseye Gborglah" },
   ],
   "KG1-Jasmine": [
     { id: "stu-323", name: "Andrea Mawumenyo Agbodza" },
@@ -462,6 +464,7 @@ export const students = {
     { id: "stu-355", name: "Purity Dufie Addae" },
     { id: "stu-356", name: "Ziya Asantewaa Mustapha Tahiru" },
     { id: "stu-357", name: "Zoey Eyram Happiness Agbosu" },
+    { id: "stu-704", name: "Nathan-Day Quashigah" },
   ],
   "KG2-Star Seeds": [
     { id: "stu-358", name: "Abdul Razak Mohammed Rabiu" },
@@ -505,6 +508,7 @@ export const students = {
     { id: "stu-320", name: "Ohenese Nana Kwaku Omane- Boakye" },
     { id: "stu-321", name: "Percy Hayford Brako" },
     { id: "stu-322", name: "Philippa Kyere Hinneh" },
+    { id: "stu-703", name: "Nana Kwabena Ofori Addo" },
   ],
   "KG2-Roses": [
     { id: "stu-380", name: "Aadil Faisal Mohammed" },
@@ -623,6 +627,8 @@ export const students = {
     { id: "stu-485", name: "Petra Nana Adwoa Abeyie Asante" },
     { id: "stu-486", name: "Sedina Anima Akwayena" },
     { id: "stu-487", name: "Sika Kwakyewaa Karikari-Boakye Yiadom" },
+    { id: "stu-701", name: "⁠Abubakar Sadick Salisu" },
+    { id: "stu-702", name: "⁠Jayliam Elorm Bediako" },
   ],
   "Grade 2-Daphne B": [
     { id: "stu-488", name: "ASHER ERIC MCKAY" },
@@ -724,6 +730,7 @@ export const students = {
     { id: "stu-578", name: "Nissi Adjoa Fremponmaa Sasu" },
     { id: "stu-579", name: "Nyusung Luri Tia" },
     { id: "stu-580", name: "Veness Otwiwaa Selormey" },
+    { id: "stu-700", name: "⁠Nana Kweku Esuako" },
   ],
   "Grade 4 B": [
     { id: "stu-581", name: "Adeline Afi Asare-Goh" },
