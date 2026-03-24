@@ -899,6 +899,24 @@ export const OptionalInvoiceItems = [
     qty: 1,
     amount: 180,
   },
+  {
+    id: "Graduation Fee",
+    name: "Graduation Fee",
+    qty: 1,
+    amount: 100,
+  },
+  {
+    id: "KG2 Graduation Fee",
+    name: "KG2 Graduation Fee",
+    qty: 1,
+    amount: 200,
+  },
+  {
+    id: "Robotics",
+    name: "Robotics",
+    qty: 1,
+    amount: 200,
+  },
 ];
 
 export const feedingOptions = {
