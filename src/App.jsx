@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { classes, students } from "./data/records";
+import { classes, students as initialStudents } from "./data/records";
 import PrintableInvoiceExporter from "./components/PrintableInvoiceExporter";
 import InvoiceForm from "./components/InvoiceForm";
 import StudentList from "./components/StudentList";
@@ -8,9 +8,20 @@ import ClassSelector from "./components/ClassSelector";
 function App() {
   const [selectedClass, setSelectedClass] = useState("");
   const [selectedStudent, setSelectedStudent] = useState(null);
+  // 1. Initialize students as state
+  const [allStudents, setAllStudents] = useState(initialStudents);
+
   const [invoices, setInvoices] = useState([]);
   const [discount, setDiscount] = useState("");
   const [totalFee, setTotalFee] = useState();
+
+  // 2. Create a helper function to update students for a specific class
+  const handleUpdateStudents = (updatedClassList) => {
+    setAllStudents((prev) => ({
+      ...prev,
+      [selectedClass]: updatedClassList,
+    }));
+  };
 
   //this function takes data from invoiceForm and adds it to list of invoices
   const handleGenerate = (invoiceData) => {
@@ -27,7 +38,8 @@ function App() {
             </div>
             {selectedClass && (
               <StudentList
-                students={students[selectedClass]}
+                students={allStudents[selectedClass] || []}
+                setStudents={handleUpdateStudents}
                 onSelectStudent={setSelectedStudent}
               />
             )}
