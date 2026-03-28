@@ -71,7 +71,7 @@ const PrintableInvoiceExporter = ({ invoices, selectedClass }) => {
                       Invoice #: {invoice.invoiceNumber || `EDMS-INV-${i + 1}`}
                     </p>
                     <p>
-                      <strong>Invoice Date:</strong> {DateFormatter(todaysDate)}
+                      <strong>Invoice Date:</strong> {DateFormatter("3/27/2026")}
                     </p>
                     <p>
                       <strong>Due Date:</strong> {DateFormatter("4/28/2026")}
