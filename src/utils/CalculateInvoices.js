@@ -76,6 +76,7 @@ export const calculateInvoice = (
   const discountMap = {
     "10%": 0.1,
     "50%": 0.5,
+    "100%": 1
   };
 
   if (discount in discountMap) {
