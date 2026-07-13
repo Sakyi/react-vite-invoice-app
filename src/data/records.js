@@ -819,13 +819,13 @@ export const OptionalInvoiceItems = [
     id: "monthly_tuition",
     name: "Monthly Tuition",
     qty: 1,
-    amount: 1100,
+    amount: 1200,
   },
   {
     id: "termly_tuition",
     name: "Termly Tuition",
     qty: 1,
-    amount: 2800,
+    amount: 3000,
   },
   {
     id: "monthly_feeding",
@@ -917,10 +917,16 @@ export const OptionalInvoiceItems = [
     qty: 1,
     amount: 200,
   },
+  {
+    id: "Examination Fee",
+    name: "Examination Fee",
+    qty: 1,
+    amount: 400,
+  },
 ];
 
 export const feedingOptions = {
-  breakdast: 5,
+  breakfast: 5,
   lunch: 90,
   both: 145,
 };

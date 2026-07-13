@@ -4,7 +4,7 @@ export const calculateInvoice = (
   discount,
   selectedClass,
   arrears,
-  overPaid
+  overPaid,
 ) => {
   let tuitionTotal = 0;
   let otherTotal = 0;
@@ -21,19 +21,19 @@ export const calculateInvoice = (
         className.includes("grade") ||
         className.includes("kg")
       )
-        return 8;
+        return 10;
     }
 
     if (type === "lunch") {
-      if (className.includes("creche")) return 10;
-      if (className.includes("nursery") || className.includes("kg")) return 15;
-      if (className.includes("grade")) return 17;
+      if (className.includes("creche")) return 15;
+      if (className.includes("nursery") || className.includes("kg")) return 18;
+      if (className.includes("grade")) return 20;
     }
 
     if (type === "both") {
-      if (className.includes("creche")) return 15;
-      if (className.includes("nursery") || className.includes("kg")) return 23;
-      if (className.includes("grade")) return 25;
+      if (className.includes("creche")) return 20;
+      if (className.includes("nursery") || className.includes("kg")) return 28;
+      if (className.includes("grade")) return 30;
     }
 
     return 0; // fallback
@@ -76,7 +76,7 @@ export const calculateInvoice = (
   const discountMap = {
     "10%": 0.1,
     "50%": 0.5,
-    "100%": 1
+    "100%": 1,
   };
 
   if (discount in discountMap) {
