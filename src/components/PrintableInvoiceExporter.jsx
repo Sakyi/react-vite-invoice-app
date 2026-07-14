@@ -27,7 +27,7 @@ const PrintableInvoiceExporter = ({ invoices, selectedClass }) => {
         {filteredInvoices.map((invoice, i) => {
           const subtotal = invoice.updatedThings.reduce(
             (sum, item) => sum + item.qty * item.amount,
-            0
+            0,
           );
 
           return (
@@ -71,10 +71,11 @@ const PrintableInvoiceExporter = ({ invoices, selectedClass }) => {
                       Invoice #: {invoice.invoiceNumber || `EDMS-INV-${i + 1}`}
                     </p>
                     <p>
-                      <strong>Invoice Date:</strong> {DateFormatter("4/1/2026")}
+                      <strong>Invoice Date:</strong>{" "}
+                      {DateFormatter("7/24/2026")}
                     </p>
                     <p>
-                      <strong>Due Date:</strong> {DateFormatter("4/28/2026")}
+                      <strong>Due Date:</strong> {DateFormatter("09/08/2026")}
                     </p>
                   </div>
                 </div>
